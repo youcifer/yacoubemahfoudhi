@@ -77,37 +77,6 @@ series.forEach((s, i) => {
   indexEl.appendChild(li);
 });
 
-/* ---------- Hover preview following the cursor ---------- */
-const peek = $('#peek');
-const peekImg = $('img', peek);
-if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  let tx = 0, ty = 0, x = 0, y = 0, raf = 0, active = false;
-  const tick = () => {
-    x += (tx - x) * 0.16;
-    y += (ty - y) * 0.16;
-    peek.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) rotate(${(tx - x) * 0.04}deg)`;
-    raf = active || Math.abs(tx - x) > 0.5 ? requestAnimationFrame(tick) : 0;
-  };
-  indexEl.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; });
-  indexEl.addEventListener('pointerover', (e) => {
-    const row = e.target.closest('.row');
-    if (!row) return;
-    const s = series.find((x) => x.id === row.dataset.id);
-    const p = s.photos[0];
-    peekImg.src = p.src;
-    peek.style.setProperty('--r', p.w / p.h);
-    tx = e.clientX; ty = e.clientY;
-    if (!active) { x = tx; y = ty; }
-    active = true;
-    peek.classList.add('on');
-    if (!raf) raf = requestAnimationFrame(tick);
-  });
-  indexEl.addEventListener('pointerleave', () => {
-    active = false;
-    peek.classList.remove('on');
-  });
-}
-
 /* ---------- Galleries ---------- */
 const galleries = $('#galleries');
 const filters = $('#filters');
