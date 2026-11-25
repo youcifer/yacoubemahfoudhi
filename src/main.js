@@ -18,6 +18,9 @@ $('#about-text').textContent = photographer.about;
 const mail = $('#mail');
 mail.href = `mailto:${photographer.email}`;
 mail.textContent = photographer.email;
+const phone = $('#phone');
+phone.href = `tel:${photographer.phone.replace(/\s/g, '')}`;
+phone.textContent = photographer.phone;
 photographer.disciplines.forEach((d, i) =>
   $('#skills').appendChild(el('li', {}, `<span>${pad(i + 1)}</span>${d} photography`)),
 );

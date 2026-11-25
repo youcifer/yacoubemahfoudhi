@@ -4,6 +4,7 @@
 export const photographer = {
   name: 'Yacoube Mahfoudhi',
   email: 'mahfoudhiyacoube@gmail.com',
+  phone: '+216 92 256 595',
   about:
     'Passionate photographer specialized in portrait, event, and product photography. My approach combines artistic sensitivity with strong attention to detail in order to capture authentic, luminous, and expressive images. Available for collaborations, creative projects, and professional assignments.',
   disciplines: ['Portrait', 'Event', 'Product'],

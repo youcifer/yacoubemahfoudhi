@@ -198,6 +198,8 @@ em { font-style: italic; color: var(--acc); }
   background: linear-gradient(var(--acc), var(--acc)) 0 100% / 0 3px no-repeat; transition: background-size 0.6s var(--ease), color 0.3s; padding-bottom: 0.1em;
 }
 .mail:hover { background-size: 100% 3px; color: var(--acc); }
+.phone { display: block; width: fit-content; margin-top: 1rem; font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 3vw, 2.2rem); letter-spacing: -0.02em; text-decoration: none; border-bottom: 2px solid var(--acc); transition: color 0.3s; }
+.phone:hover { color: var(--acc); }
 .contact-actions { display: flex; align-items: center; gap: 1.2rem; margin-top: 2rem; }
 .toast { font-family: var(--display); font-size: 0.9rem; color: var(--acc); }
 
