@@ -26,7 +26,7 @@ vercel --prod
 - `src/data.js` — name, email, about text, series titles/notes and photo dimensions.
 - `public/images/` — photos, named `<series-id>-01.jpg`, `-02.jpg`, … To add a photo, drop the file in and add its `[width, height]` to that series in `data.js`.
 - `src/style.css` — colours live in the `:root` tokens at the top (light + dark).
-- `index.html` — page title, description and social-share tags. After you have your domain, make `og:image` an absolute URL (e.g. `https://your-domain.com/images/wedding-01.jpg`) so link previews work everywhere.
+- `index.html` — page title, description and social-share tags. The link-preview image is `public/og.png` (1200×630, the YM logo card); if you change your domain, update the `og:` URLs in `index.html`.
 
 ## Features
 
