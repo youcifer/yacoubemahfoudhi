@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Yacoube Mahfoudhi — Photographer</title>
+    <meta
+      name="description"
+      content="Portfolio of Yacoube Mahfoudhi, photographer specialized in portrait, event and product photography. Weddings, concerts, street and heritage series."
+    />
+    <meta name="theme-color" content="#f1efeb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1d2024" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yacoube Mahfoudhi — Photographer" />
+    <meta property="og:description" content="Portrait, event and product photography. Authentic, luminous, expressive images." />
+    <meta property="og:image" content="/images/wedding-01.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply saved theme before first paint (no flash)
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#work">Skip to work</a>
+
+    <header class="bar" id="bar">
+      <a class="mark" href="#top" aria-label="Yacoube Mahfoudhi — home">YM</a>
+      <nav class="bar-nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="bar-end">
+        <span class="avail"><i></i>Available for bookings</span>
+        <button class="theme" id="theme" type="button" aria-label="Toggle light and dark theme">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-meta">
+          <span>Photographer</span>
+          <span id="disciplines"></span>
+        </div>
+        <h1 class="name" aria-label="Yacoube Mahfoudhi">
+          <span class="line"><span class="word">Yacoube</span></span>
+          <span class="line"><span class="word">Mahfoudhi</span></span>
+        </h1>
+        <p class="hero-lede">
+          Authentic, luminous and expressive images — <em>portraits, events and products</em> seen with an eye for detail.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#work">View the work <span aria-hidden="true">↓</span></a>
+          <a class="link" href="#contact">Get in touch</a>
+        </div>
+        <div class="strip" aria-hidden="true">
+          <div class="strip-track" id="strip"></div>
+        </div>
+        <div class="hero-foot" aria-hidden="true">
+          <span id="count"></span>
+          <span class="scroll-hint">Scroll</span>
+        </div>
+      </section>
+
+      <!-- INDEX -->
+      <section class="work" id="work">
+        <div class="sec-head">
+          <p class="eyebrow">Selected series</p>
+          <h2>Seven ways of looking.</h2>
+        </div>
+        <ol class="index" id="index"></ol>
+
+        <div class="filters" id="filters" role="toolbar" aria-label="Filter series"></div>
+        <div id="galleries"></div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about" id="about">
+        <p class="eyebrow">About</p>
+        <p class="about-text" id="about-text"></p>
+        <ul class="skills" id="skills"></ul>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="contact" id="contact">
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s make something <em>luminous</em>.</h2>
+        <a class="mail" id="mail" href="#"></a>
+        <div class="contact-actions">
+          <button class="btn ghost" id="copy" type="button">Copy email</button>
+          <span class="toast" id="toast" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span>© <span id="year"></span> Yacoube Mahfoudhi</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+
+    <!-- Hover preview for the index (desktop pointers only) -->
+    <div class="peek" id="peek" aria-hidden="true"><img alt="" /></div>
+
+    <!-- Lightbox -->
+    <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+      <div class="lb-top">
+        <span class="lb-count" id="lb-count"></span>
+        <button class="lb-btn" id="lb-close" type="button" aria-label="Close">×</button>
+      </div>
+      <button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Previous photo">‹</button>
+      <figure class="lb-fig">
+        <img id="lb-img" alt="" />
+        <figcaption id="lb-cap"></figcaption>
+      </figure>
+      <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Next photo">›</button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
